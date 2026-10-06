@@ -1,0 +1,428 @@
+
+:root {
+  --color-cream:       #fbf2e1;
+  --color-cream-soft:  #fffaf0;
+  --color-brown-900:   #3a2416;
+  --color-brown-700:   #5c3b27;
+  --color-text:        #4a372c;
+  --color-text-muted:  #7a6a5d;
+  --color-accent:      #f0a98c;   
+  --color-yellow:      #f5c94d;   
+  --color-yellow-soft: #fbe8b8;
+  --color-pink-soft:   #fce4e0;
+  --color-green-soft:  #e9f3e2;
+  --color-white:       #ffffff;
+
+  /* Tipografía */
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Poppins", "Segoe UI", sans-serif;
+
+  --fs-h1: clamp(2rem, 5vw, 3rem);
+  --fs-h2: clamp(1.5rem, 3.5vw, 2.1rem);
+  --fs-h3: 1.15rem;
+
+  /* Espaciado */
+  --space-2xs: 0.375rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1.25rem;
+  --space-md: 2rem;
+  --space-lg: 3rem;
+  --space-xl: 4.5rem;
+
+  /* Bordes / sombras */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-full: 999px;
+  --shadow-card: 0 10px 24px rgba(58, 36, 22, 0.1);
+
+  /* Layout */
+  --container-width: 1180px;
+}
+
+
+/* =========================================================================
+   2. RESET Y BOX MODEL
+   ========================================================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  color: var(--color-brown-900);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+
+/* =========================================================================
+   3. TIPOGRAFÍA BASE
+   ========================================================================= */
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+
+p { color: var(--color-text-muted); }
+
+blockquote {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--color-brown-700);
+}
+
+
+/* =========================================================================
+   4. UTILIDADES
+   ========================================================================= */
+section {
+  padding-block: var(--space-xl);
+  padding-inline: var(--space-sm);
+}
+
+section > h2,
+section > p,
+section > .section-intro {
+  max-width: var(--container-width);
+  margin-inline: auto;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  font-weight: 600;
+  padding: 0.85em 1.75em;
+  border-radius: var(--radius-full);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--color-brown-900);
+  color: var(--color-cream-soft);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-brown-900);
+  border: 1.5px solid var(--color-brown-900);
+}
+
+.btn-outline:hover {
+  background: var(--color-brown-900);
+  color: var(--color-cream-soft);
+}
+
+
+/* =========================================================================
+   5. HERO / PORTADA (#inicio)
+   ========================================================================= */
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding-top: var(--space-lg);
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+
+.hero-tag {
+  display: inline-flex;
+  background: var(--color-yellow);
+  color: var(--color-brown-900);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.5em 1em;
+  border-radius: var(--radius-full);
+}
+
+.hero-title {
+  max-width: 16ch;
+}
+
+.hero-text {
+  max-width: 42ch;
+  font-size: 1.1rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.hero-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.hero-facts li {
+  background: var(--color-white);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.5em 1em;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-card);
+}
+
+.hero-figure {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.hero-figure img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.hero-figure figcaption {
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--color-white);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+
+/* =========================================================================
+   6. FRANJA DE CATEGORÍAS
+   ========================================================================= */
+.category-strip {
+  background: var(--color-brown-900);
+  padding-block: var(--space-sm);
+}
+
+.category-strip ul {
+  max-width: var(--container-width);
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+.category-strip li {
+  color: var(--color-cream-soft);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+
+/* =========================================================================
+   7. MENÚ DESTACADO (#menu)
+   ========================================================================= */
+.menu-section {
+  background: var(--color-pink-soft);
+}
+
+.section-intro {
+  margin-top: var(--space-2xs);
+  margin-bottom: var(--space-lg);
+}
+
+.menu-grid {
+  max-width: var(--container-width);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.menu-card {
+  background: var(--color-white);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+
+/* =========================================================================
+   8. NUESTRA HISTORIA (#historia)
+   ========================================================================= */
+.historia-section {
+  max-width: 720px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  text-align: left;
+}
+
+
+/* =========================================================================
+   9. HORARIO (#horario)
+   ========================================================================= */
+.horario-section {
+  background: var(--color-yellow-soft);
+}
+
+.horario-list {
+  max-width: var(--container-width);
+  margin-inline: auto;
+  margin-top: var(--space-md);
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: var(--space-md);
+  row-gap: var(--space-xs);
+  align-items: baseline;
+}
+
+.horario-list dt {
+  font-weight: 700;
+  color: var(--color-brown-900);
+}
+
+.horario-list dd {
+  color: var(--color-text);
+}
+
+
+/* =========================================================================
+   10. TESTIMONIOS (#testimonios)
+   ========================================================================= */
+.testimonios-section {
+  max-width: var(--container-width);
+  margin-inline: auto;
+}
+
+.testimonio-card {
+  margin-top: var(--space-md);
+  background: var(--color-white);
+  max-width: 480px;
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.testimonio-autor {
+  font-weight: 600;
+  color: var(--color-brown-900);
+}
+
+
+/* =========================================================================
+   11. VISÍTANOS / CONTACTO (#visitanos)
+   ========================================================================= */
+.visitanos-section {
+  background: var(--color-green-soft);
+}
+
+.contacto-address {
+  max-width: var(--container-width);
+  margin-inline: auto;
+  margin-top: var(--space-md);
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.contacto-nombre {
+  font-weight: 700;
+  color: var(--color-brown-900);
+  font-size: 1.1rem;
+}
+
+.contacto-link {
+  display: inline-flex;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.contacto-link:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================================
+   12. FOOTER
+   ========================================================================= */
+.site-footer {
+  background: var(--color-brown-900);
+  color: var(--color-cream-soft);
+  text-align: center;
+  padding-block: var(--space-md);
+  font-size: 0.85rem;
+}
+
+
+/* =========================================================================
+   13. MEDIA QUERIES — RESPONSIVE (mobile-first)
+   ========================================================================= */
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hero-content,
+  .hero-figure {
+    flex: 1;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
