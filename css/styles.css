@@ -1,18 +1,16 @@
 :root {
-
   --color-cream:       #fbf2e1;
   --color-cream-soft:  #fffaf0;
   --color-brown-900:   #3a2416;
   --color-brown-700:   #5c3b27;
   --color-text:        #4a372c;
   --color-text-muted:  #7a6a5d;
-  --color-accent:      #f0a98c;  
-  --color-yellow:      #f5c94d;   
+  --color-accent:      #f0a98c;
+  --color-yellow:      #f5c94d;
   --color-yellow-soft: #fbe8b8;
   --color-pink-soft:   #fce4e0;
   --color-green-soft:  #e9f3e2;
   --color-white:       #ffffff;
-
 
   --font-heading: "Playfair Display", Georgia, serif;
   --font-body: "Poppins", "Segoe UI", sans-serif;
@@ -32,13 +30,10 @@
   --radius-md: 16px;
   --radius-full: 999px;
   --shadow-card: 0 10px 24px rgba(58, 36, 22, 0.1);
+
   --container-width: 1180px;
 }
 
-
-/* =========================================================================
-   2. RESET Y BOX MODEL
-   ========================================================================= */
 *,
 *::before,
 *::after {
@@ -49,15 +44,25 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--color-white);
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background-color: var(--color-cream);
   color: var(--color-text);
   font-family: var(--font-body);
   line-height: 1.6;
   overflow-x: hidden;
   overflow-wrap: break-word;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 img {
@@ -83,10 +88,6 @@ h1, h2, h3 {
   font-weight: 700;
 }
 
-
-/* =========================================================================
-   3. TIPOGRAFÍA BASE
-   ========================================================================= */
 h1 { font-size: var(--fs-h1); }
 h2 { font-size: var(--fs-h2); }
 h3 { font-size: var(--fs-h3); }
@@ -100,10 +101,6 @@ blockquote {
   color: var(--color-brown-700);
 }
 
-
-/* =========================================================================
-   4. UTILIDADES
-   ========================================================================= */
 section {
   padding-block: var(--space-xl);
   padding-inline: var(--space-sm);
@@ -148,12 +145,13 @@ section > .section-intro {
   color: var(--color-cream-soft);
 }
 
-
-
 .hero {
+  flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: var(--space-lg);
+  width: 100%;
   max-width: var(--container-width);
   margin-inline: auto;
   padding-top: var(--space-lg);
@@ -225,10 +223,6 @@ section > .section-intro {
   color: var(--color-text-muted);
 }
 
-
-/* =========================================================================
-   6. FRANJA DE CATEGORÍAS
-   ========================================================================= */
 .category-strip {
   background: var(--color-brown-900);
   padding-block: var(--space-sm);
@@ -251,181 +245,6 @@ section > .section-intro {
   letter-spacing: 0.04em;
 }
 
-
-/* =========================================================================
-   7. MENÚ DESTACADO (#menu)
-   ========================================================================= */
-.menu-section {
-  background: var(--color-pink-soft);
-}
-
-.section-intro {
-  margin-top: var(--space-2xs);
-  margin-bottom: var(--space-lg);
-}
-
-.menu-grid {
-  max-width: var(--container-width);
-  margin-inline: auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-md);
-}
-
-.menu-card {
-  background: var(--color-white);
-  padding: var(--space-md);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2xs);
-}
-
-.menu-card__img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: var(--radius-sm);
-  margin-bottom: var(--space-2xs);
-}
-
-
-/* =========================================================================
-   8. NUESTRA HISTORIA (#historia)
-   ========================================================================= */
-.historia-section {
-  max-width: 720px;
-  margin-inline: auto;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-  text-align: left;
-}
-
-
-/* =========================================================================
-   9. HORARIO (#horario)
-   ========================================================================= */
-.horario-section {
-  background: var(--color-yellow-soft);
-}
-
-.horario-inner {
-  max-width: var(--container-width);
-  margin-inline: auto;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-}
-
-.horario-img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
-}
-
-.horario-content {
-  display: flex;
-  flex-direction: column;
-}
-
-.horario-list {
-  margin-top: var(--space-md);
-  display: grid;
-  grid-template-columns: max-content 1fr;
-  column-gap: var(--space-md);
-  row-gap: var(--space-xs);
-  align-items: baseline;
-}
-
-.horario-list dt {
-  font-weight: 700;
-  color: var(--color-brown-900);
-}
-
-.horario-list dd {
-  color: var(--color-text);
-}
-
-
-/* =========================================================================
-   10. TESTIMONIOS (#testimonios)
-   ========================================================================= */
-.testimonios-section {
-  max-width: var(--container-width);
-  margin-inline: auto;
-}
-
-.testimonio-card {
-  margin-top: var(--space-md);
-  background: var(--color-white);
-  max-width: 480px;
-  padding: var(--space-md);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-}
-
-.testimonio-autor {
-  font-weight: 600;
-  color: var(--color-brown-900);
-}
-
-
-/* =========================================================================
-   11. VISÍTANOS / CONTACTO (#visitanos)
-   ========================================================================= */
-.visitanos-section {
-  background: var(--color-green-soft);
-}
-
-.contacto-address {
-  max-width: var(--container-width);
-  margin-inline: auto;
-  margin-top: var(--space-md);
-  font-style: normal;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2xs);
-}
-
-.contacto-nombre {
-  font-weight: 700;
-  color: var(--color-brown-900);
-  font-size: 1.1rem;
-}
-
-.contacto-link {
-  display: inline-flex;
-  font-weight: 600;
-  color: var(--color-accent);
-}
-
-.contacto-link:hover {
-  text-decoration: underline;
-}
-
-
-/* =========================================================================
-   12. FOOTER
-   ========================================================================= */
-.site-footer {
-  background: var(--color-brown-900);
-  color: var(--color-cream-soft);
-  text-align: center;
-  padding-block: var(--space-md);
-  font-size: 0.85rem;
-}
-
-
-/* =========================================================================
-   13. MEDIA QUERIES — RESPONSIVE (mobile-first)
-   ========================================================================= */
 @media (min-width: 768px) {
   .hero {
     flex-direction: row;
@@ -435,25 +254,5 @@ section > .section-intro {
   .hero-content,
   .hero-figure {
     flex: 1;
-  }
-
-  .menu-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .horario-inner {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .horario-img,
-  .horario-content {
-    flex: 1;
-  }
-}
-
-@media (min-width: 1024px) {
-  .menu-grid {
-    grid-template-columns: repeat(3, 1fr);
   }
 }
