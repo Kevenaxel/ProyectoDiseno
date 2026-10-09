@@ -1,24 +1,24 @@
-
 :root {
-  /* Paleta de marca */
   --color-cream:       #fbf2e1;
   --color-cream-soft:  #fffaf0;
   --color-brown-900:   #3a2416;
   --color-brown-700:   #5c3b27;
   --color-text:        #4a372c;
   --color-text-muted:  #7a6a5d;
-  --color-accent:      #f0a98c;   /* coral: detalles, enlaces */
-  --color-yellow:      #f5c94d;   /* chips / franja de categorías */
+  --color-accent:      #f0a98c;
+  --color-yellow:      #f5c94d;
   --color-yellow-soft: #fbe8b8;
   --color-pink-soft:   #fce4e0;
   --color-green-soft:  #e9f3e2;
   --color-white:       #ffffff;
+
   --font-heading: "Playfair Display", Georgia, serif;
   --font-body: "Poppins", "Segoe UI", sans-serif;
 
   --fs-h1: clamp(2rem, 5vw, 3rem);
   --fs-h2: clamp(1.5rem, 3.5vw, 2.1rem);
   --fs-h3: 1.15rem;
+
   --space-2xs: 0.375rem;
   --space-xs: 0.75rem;
   --space-sm: 1.25rem;
@@ -34,7 +34,6 @@
   --container-width: 1180px;
 }
 
-
 *,
 *::before,
 *::after {
@@ -45,15 +44,25 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--color-white);
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background-color: var(--color-cream);
   color: var(--color-text);
   font-family: var(--font-body);
   line-height: 1.6;
   overflow-x: hidden;
   overflow-wrap: break-word;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 img {
@@ -79,7 +88,6 @@ h1, h2, h3 {
   font-weight: 700;
 }
 
-
 h1 { font-size: var(--fs-h1); }
 h2 { font-size: var(--fs-h2); }
 h3 { font-size: var(--fs-h3); }
@@ -92,7 +100,6 @@ blockquote {
   font-size: 1.15rem;
   color: var(--color-brown-700);
 }
-
 
 section {
   padding-block: var(--space-xl);
@@ -138,12 +145,13 @@ section > .section-intro {
   color: var(--color-cream-soft);
 }
 
-
-
 .hero {
+  flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: var(--space-lg);
+  width: 100%;
   max-width: var(--container-width);
   margin-inline: auto;
   padding-top: var(--space-lg);
@@ -215,7 +223,6 @@ section > .section-intro {
   color: var(--color-text-muted);
 }
 
-
 .category-strip {
   background: var(--color-brown-900);
   padding-block: var(--space-sm);
@@ -237,8 +244,6 @@ section > .section-intro {
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
-
-
 
 @media (min-width: 768px) {
   .hero {
