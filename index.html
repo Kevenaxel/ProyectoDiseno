@@ -19,7 +19,7 @@
     <div class="navbar-container">
 
       <!-- Marca / Logo -->
-      <a href="#" class="navbar-brand">
+      <a href="#inicio" class="navbar-brand">
         <img src="img/logo.webp" alt="Logotipo Crepcoffee Chavarría" class="navbar-logo">
         <div class="brand-text">
           <span class="brand-title">Crepcoffee</span>
@@ -30,7 +30,7 @@
       <!-- Navegación central -->
       <nav class="navbar-menu" id="navbarMenu" aria-label="Menú principal">
         <ul class="nav-list">
-          <li class="nav-item"><a href="#Inicio" class="nav-link">Inicio</a></li>
+          <li class="nav-item"><a href="#inicio" class="nav-link">Inicio</a></li>
           <li class="nav-item"><a href="#menu" class="nav-link">Menú</a></li>
           <li class="nav-item"><a href="#historia" class="nav-link">Nuestra historia</a></li>
           <li class="nav-item"><a href="#horario" class="nav-link">Horario</a></li>
@@ -40,9 +40,9 @@
 
       <!-- Botón de acción -->
       <div class="navbar-action">
-        <a href="#contacto" class="btn-pedir">
+        <a href="#contacto" class="btn-pedir" aria-label="Más información por WhatsApp">
           <span>Más información por WhatsApp</span>
-          <svg class="icon-chat" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="icon-chat" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
           </svg>
         </a>
@@ -60,28 +60,35 @@
     <!-- Sección de inicio / presentación principal -->
     <section id="inicio" class="hero" aria-labelledby="titulo-principal">
       <div class="hero-content">
-        <p class="hero-tag">Hecho al momento - Chavarría</p>
-        <h1 id="titulo-principal" class="hero-title">Tu antojo de fin de semana, más rico y feliz.</h1>
+        <p class="hero-tag"><span aria-hidden="true">✦</span> Hecho al momento · Chavarría</p>
+        <h1 id="titulo-principal" class="hero-title">Tu antojo de fin de semana, <span class="accent">más rico y feliz.</span></h1>
         <p class="hero-text">
           Crepas dulces, bebidas frías y comida casual preparada con cariño para compartir sin prisa.
         </p>
 
         <div class="hero-actions">
-          <a href="#menu" class="btn btn-primary">Ver el menú</a>
-          <a href="#contacto" class="btn btn-outline">Cómo llegar</a>
+          <a href="#menu" class="btn btn-primary">Ver el menú <span aria-hidden="true">↘</span></a>
+          <a href="#contacto" class="btn btn-outline">Cómo llegar <span aria-hidden="true">📍</span></a>
         </div>
 
         <ul class="hero-facts" aria-label="Datos rápidos de Crepcoffee">
-          <li>Viernes a domingo</li>
-          <li>4:00 PM - 8:00 PM</li>
-          <li>Comida fresca hecha al pedir</li>
+          <li><span aria-hidden="true">🕐</span> Vie–Dom · 4:00–8:00 PM</li>
+          <li><span aria-hidden="true">✨</span> <strong>Fresco</strong> hecho al pedir</li>
         </ul>
       </div>
 
-      <figure class="hero-figure">
-        <img src="img/Comida 4.webp" alt="Bebidas frías preparadas por Crepcoffee Chavarría">
-        <figcaption>Bebidas frías y antojitos preparados al momento.</figcaption>
-      </figure>
+      <div class="hero-visual">
+        <span class="blob blob--mint" aria-hidden="true"></span>
+        <span class="blob blob--pink" aria-hidden="true"></span>
+        <span class="blob blob--peach" aria-hidden="true"></span>
+
+        <figure class="hero-figure">
+          <img src="img/Comida 4.webp" alt="Bebidas frías preparadas por Crepcoffee Chavarría">
+        </figure>
+
+        <p class="hero-note"><span aria-hidden="true">♡</span> Favorito: mangonada cremosa</p>
+        <p class="hero-chip">Frío · Cremoso · Delicioso</p>
+      </div>
     </section>
 
     <!-- Franja de categorías destacadas -->
@@ -102,7 +109,7 @@
 
         <!-- Encabezado de la sección -->
         <div class="bebidas-header">
-          <p class="bebidas-etiqueta">BEBIDAS</p>
+          <p class="bebidas-etiqueta">Bebidas</p>
           <h2 id="titulo-bebidas" class="bebidas-titulo">
             Frías, cremosas y con mucha alegría.
           </h2>
