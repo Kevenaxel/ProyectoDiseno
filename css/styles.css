@@ -461,3 +461,117 @@ section > .section-intro {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+.menu-section {
+  padding: 18px var(--space-sm) 48px;
+  background: #35190f;
+}
+
+.menu-container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+}
+
+.menu-header {
+  margin-bottom: 22px;
+}
+
+.menu-eyebrow {
+  margin-bottom: 4px;
+  color: #f5d477;
+  font-size: 0.48rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.menu-header h2 {
+  color: #fff0cc;
+  font-size: 2.15rem;
+  line-height: 1.12;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.menu-card {
+  overflow: hidden;
+  border: 2px solid #f5c94d;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.menu-card img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.menu-card-info {
+  padding: var(--space-sm);
+  background: #fff;
+}
+
+.menu-card-info h3 {
+  margin-bottom: 0.25em;
+  color: #432b21;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  line-height: 1.15;
+}
+
+.menu-card-info > p:not(.menu-price) {
+  color: #493a33;
+  font-size: 0.85rem;
+}
+
+.menu-price {
+  display: inline-flex;
+  min-width: 40px;
+  min-height: 24px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  padding: 1px 8px;
+  border: 1px solid #2f211b;
+  border-radius: 999px;
+  background: #f5cf62;
+  color: #2f211b;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+@media (max-width: 540px) {
+  .menu-section {
+    padding: 22px var(--space-sm) 36px;
+  }
+
+  .menu-header h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: calc(75% - 8px);
+    margin-inline: auto;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  .menu-card:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc((100% - var(--space-md)) / 2);
+  }
+}
