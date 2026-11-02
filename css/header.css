@@ -148,11 +148,7 @@
   box-shadow: var(--shadow-card);
 }
 
-.btn-pedir span {
-  display: none;
-}
-
-.icon-chat {
+.icon-whatsapp {
   flex-shrink: 0;
 }
 
