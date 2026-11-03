@@ -1,21 +1,22 @@
+
 :root {
-  --color-cream:       #f7e6b0;
-  --color-cream-soft:  #fdf5e2;
-  --color-brown-900:   #3a2416;
-  --color-brown-700:   #5c3b27;
-  --color-text:        #4a372c;
-  --color-text-muted:  #7a6a5d;
-  --color-accent:      #f0a98c;
-  --color-terracota:   #c15b3a;
-  --color-yellow:      #f5c94d;
+  --color-cream: #f7e6b0;
+  --color-cream-soft: #fdf5e2;
+  --color-brown-900: #3a2416;
+  --color-brown-700: #5c3b27;
+  --color-text: #4a372c;
+  --color-text-muted: #7a6a5d;
+  --color-accent: #f0a98c;
+  --color-terracota: #c15b3a;
+  --color-yellow: #f5c94d;
   --color-yellow-soft: #fbe8b8;
-  --color-pink-soft:   #fbd9de;
-  --color-pink-blob:   #f6c9d0;
-  --color-mint:        #c3ddc9;
-  --color-lavender:    #ddd0f0;
-  --color-green-soft:  #e9f3e2;
-  --color-whatsapp:    #25d366;
-  --color-white:       #ffffff;
+  --color-pink-soft: #fbd9de;
+  --color-pink-blob: #f6c9d0;
+  --color-mint: #c3ddc9;
+  --color-lavender: #ddd0f0;
+  --color-green-soft: #e9f3e2;
+  --color-whatsapp: #25d366;
+  --color-white: #ffffff;
 
   --font-heading: "Playfair Display", Georgia, serif;
   --font-body: "Poppins", "Segoe UI", sans-serif;
@@ -36,7 +37,6 @@
   --radius-lg: 28px;
   --radius-full: 999px;
   --shadow-card: 0 10px 24px rgba(58, 36, 22, 0.1);
-
   --container-width: clamp(1180px, 78vw, 1440px);
 }
 
@@ -98,7 +98,9 @@ h1 { font-size: var(--fs-h1); }
 h2 { font-size: var(--fs-h2); }
 h3 { font-size: var(--fs-h3); }
 
-p { color: var(--color-text-muted); }
+p {
+  color: var(--color-text-muted);
+}
 
 blockquote {
   font-family: var(--font-heading);
@@ -127,7 +129,9 @@ section > .section-intro {
   font-weight: 600;
   padding: 0.85em 1.75em;
   border-radius: var(--radius-full);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  transition: transform 0.2s ease,
+              box-shadow 0.2s ease,
+              background-color 0.2s ease;
 }
 
 .btn-primary {
@@ -151,9 +155,8 @@ section > .section-intro {
   color: var(--color-cream-soft);
 }
 
-/* =========================================================================
-   HERO / PORTADA (#inicio)
-   ========================================================================= */
+/* HERO / PORTADA */
+
 .hero {
   flex: 1;
   display: flex;
@@ -224,7 +227,6 @@ section > .section-intro {
   box-shadow: var(--shadow-card);
 }
 
-/* --- Visual del hero: imagen + formas decorativas + insignias --- */
 .hero-visual {
   position: relative;
   flex: 1;
@@ -282,9 +284,8 @@ section > .section-intro {
   box-shadow: var(--shadow-card);
 }
 
-/* =========================================================================
-   FRANJA DE CATEGORÍAS
-   ========================================================================= */
+/* FRANJA DE CATEGORIAS */
+
 .category-strip {
   background: var(--color-brown-900);
   padding-block: var(--space-sm);
@@ -313,9 +314,8 @@ section > .section-intro {
   color: var(--color-accent);
 }
 
-/* =========================================================================
-   BEBIDAS (#bebidas)
-   ========================================================================= */
+/* BEBIDAS */
+
 .bebidas {
   background: var(--color-pink-soft);
 }
@@ -337,7 +337,6 @@ section > .section-intro {
   color: var(--color-brown-900);
   margin-bottom: var(--space-2xs);
 }
-
 
 .bebidas-grid {
   display: grid;
@@ -374,9 +373,8 @@ section > .section-intro {
   font-size: 0.85rem;
 }
 
-/* =========================================================================
-   MEDIA QUERIES — RESPONSIVE (mobile-first)
-   ========================================================================= */
+/* RESPONSIVE GENERAL */
+
 @media (min-width: 600px) {
   .bebidas-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -461,6 +459,8 @@ section > .section-intro {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+/* MENU */
 
 .menu-section {
   padding: 18px var(--space-sm) 48px;
@@ -576,9 +576,8 @@ section > .section-intro {
   }
 }
 
-/* =========================================================================
-   NUESTRO LUGAR (#visitanos)
-   ========================================================================= */
+/* NUESTRO LUGAR */
+
 .lugar-section {
   padding: var(--space-lg) var(--space-sm);
   background: var(--color-cream-soft);
@@ -736,5 +735,193 @@ section > .section-intro {
     flex-basis: auto;
     width: 66px;
     height: 66px;
+  }
+}
+
+/* ==========================================
+   TRES PASOS Y LISTO
+   ========================================== */
+
+.pasos-section {
+  width: 100%;
+  background: var(--color-green-soft);
+  padding: 55px var(--space-sm) 60px;
+}
+
+.pasos-container {
+  width: 100%;
+  max-width: 920px;
+  margin-inline: auto;
+  text-align: left;
+}
+
+.pasos-header {
+  margin-bottom: 24px;
+}
+
+.pasos-eyebrow {
+  margin-bottom: 5px;
+  color: var(--color-brown-900);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.pasos-header h2 {
+  color: var(--color-brown-900);
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.pasos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 38px;
+}
+
+.paso-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 110px;
+  padding: 16px 18px;
+  background: var(--color-white);
+  border: 2px solid var(--color-brown-900);
+  border-radius: 17px;
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+.paso-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.paso-numero {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--color-accent);
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.paso-card h3 {
+  margin-bottom: 2px;
+  color: var(--color-brown-900);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.paso-card p {
+  color: var(--color-brown-700);
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+.pasos-action {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.pasos-btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px 22px;
+  background: var(--color-whatsapp);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 0 #16a34a;
+  transition: transform 0.2s ease,
+              background-color 0.2s ease;
+}
+
+.pasos-btn-whatsapp:hover {
+  background: #1ebe5d;
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.pasos-btn-whatsapp:focus-visible {
+  outline: 3px solid var(--color-brown-900);
+  outline-offset: 4px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .pasos-grid {
+    gap: 12px;
+  }
+
+  .paso-card {
+    padding: 16px 14px;
+  }
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+  .pasos-section {
+    padding: 45px var(--space-sm);
+  }
+
+  .pasos-header {
+    margin-bottom: 25px;
+  }
+
+  .pasos-header h2 {
+    font-size: 2rem;
+  }
+
+  .pasos-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 30px;
+  }
+
+  .paso-card {
+    min-height: 105px;
+    padding: 18px;
+  }
+
+  .paso-numero {
+    font-size: 1.8rem;
+  }
+
+  .paso-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .paso-card p {
+    font-size: 0.85rem;
+  }
+
+  .pasos-btn-whatsapp {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .paso-card,
+  .pasos-btn-whatsapp {
+    transition: none;
   }
 }
