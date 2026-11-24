@@ -1016,7 +1016,7 @@ section > .section-intro {
 }
 
 .footer-whatsapp-icon {
-  display: block;
+  display: none;
   width: 1.45rem;
   height: 1.45rem;
 }
@@ -1092,9 +1092,6 @@ section > .section-intro {
     grid-column: auto;
   }
 }
-<<<<<<< Updated upstream
-=======
-
 /* ==========================================
    PASARELAS DE BEBIDAS Y MENÚ
    ========================================== */
@@ -1442,4 +1439,3 @@ section > .section-intro {
     transition: none;
   }
 }
->>>>>>> Stashed changes
