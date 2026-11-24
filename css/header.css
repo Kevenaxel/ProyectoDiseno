@@ -126,6 +126,14 @@
   color: var(--color-accent);
 }
 
+.navbar-brand:focus-visible,
+.nav-link:focus-visible,
+.btn-pedir:focus-visible,
+.nav-toggle:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
 .navbar-action {
   order: 2;
 }
@@ -152,7 +160,7 @@
   display: none;
 }
 
-.icon-chat {
+.icon-whatsapp {
   flex-shrink: 0;
 }
 

@@ -50,7 +50,29 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 90px;
   background: var(--color-white);
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 200;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-full);
+  background: var(--color-brown-900);
+  color: var(--color-white);
+  transform: translateY(-180%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+section[id] {
+  scroll-margin-top: 90px;
 }
 
 body {
@@ -581,6 +603,13 @@ section > .section-intro {
 .lugar-section {
   padding: var(--space-lg) var(--space-sm);
   background: var(--color-cream-soft);
+}
+
+.section-anchor {
+  display: block;
+  width: 0;
+  height: 0;
+  scroll-margin-top: 90px;
 }
 
 .lugar-container {
