@@ -4,16 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crepcoffee Chavarría</title>
+
+  <!-- Tipografía web -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/header.css">
 </head>
 <body>
 
+  <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
+
   <header class="navbar">
     <div class="navbar-container">
-      
-      <!-- Marca / Logo -->
-      <a href="#inicio" class="navbar-brand" aria-label="Ir al inicio de Crepcoffee Chavarría">
+      <a href="#inicio" class="navbar-brand">
         <img src="img/logo.webp" alt="Logotipo Crepcoffee Chavarría" class="navbar-logo">
         <div class="brand-text">
           <span class="brand-title">Crepcoffee</span>
@@ -21,24 +27,322 @@
         </div>
       </a>
 
-      <!-- Navegación central -->
-      <nav class="navbar-menu" aria-label="Menú principal">
+      <nav class="navbar-menu" id="navbarMenu" aria-label="Menú principal">
         <ul class="nav-list">
+          <li class="nav-item"><a href="#inicio" class="nav-link">Inicio</a></li>
+          <li class="nav-item"><a href="#bebidas" class="nav-link">Bebidas</a></li>
           <li class="nav-item"><a href="#menu" class="nav-link">Menú</a></li>
           <li class="nav-item"><a href="#historia" class="nav-link">Nuestra historia</a></li>
           <li class="nav-item"><a href="#horario" class="nav-link">Horario</a></li>
-          <li class="nav-item"><a href="#visitanos" class="nav-link">Visítanos</a></li>
         </ul>
       </nav>
 
-      <!-- Botón de acción -->
       <div class="navbar-action">
-        <a href="#contacto" class="whatsapp-link" aria-label="Contactar por WhatsApp">
-          <span class="whatsapp-icon" aria-hidden="true">WhatsApp</span>
+        <a href="https://api.whatsapp.com/send?phone=50375278825&text=Hola%20Crepcoffee%2C%20quiero%20hacer%20un%20pedido." class="btn-pedir" target="_blank" rel="noopener noreferrer" aria-label="Pedir por WhatsApp">
+          <span>Pedir por WhatsApp</span>
+          <svg class="icon-whatsapp" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20.52 3.48A11.86 11.86 0 0 0 12.08 0C5.53 0 .2 5.33.2 11.88c0 2.09.55 4.13 1.59 5.93L.1 24l6.33-1.66a11.87 11.87 0 0 0 5.65 1.43h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.18-1.24-6.16-3.45-8.41ZM12.09 21.7h-.01a9.8 9.8 0 0 1-4.99-1.37l-.36-.21-3.76.99 1-3.66-.23-.38a9.8 9.8 0 0 1-1.5-5.19C2.24 6.47 6.66 2.05 12.09 2.05c2.63 0 5.1 1.03 6.96 2.9a9.78 9.78 0 0 1 2.88 6.96c0 5.43-4.42 9.85-9.84 9.85Zm5.4-7.38c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.48-1.77-1.65-2.07-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"></path>
+          </svg>
         </a>
       </div>
 
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navbarMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
+
+  <main id="contenido-principal">
+    <section id="inicio" class="hero" aria-labelledby="titulo-principal">
+      <div class="hero-content">
+        <p class="hero-tag"><span aria-hidden="true">✦</span> Hecho al momento · Chavarría</p>
+        <h1 id="titulo-principal" class="hero-title">Tu antojo de fin de semana, <span class="accent">más rico y feliz.</span></h1>
+        <p class="hero-text">
+          Crepas dulces, bebidas frías y comida casual preparada con cariño para compartir sin prisa.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#menu" class="btn btn-primary">Ver el menú <span aria-hidden="true">↘</span></a>
+          <a href="#contacto" class="btn btn-outline">Cómo llegar <span aria-hidden="true">📍</span></a>
+        </div>
+
+        <ul class="hero-facts" aria-label="Datos rápidos de Crepcoffee">
+          <li><span aria-hidden="true">🕐</span> Vie–Dom · 4:00–8:00 PM</li>
+          <li><span aria-hidden="true">✨</span> <strong>Fresco</strong> hecho al pedir</li>
+        </ul>
+      </div>
+
+      <div class="hero-visual">
+        <span class="blob blob--mint" aria-hidden="true"></span>
+        <span class="blob blob--pink" aria-hidden="true"></span>
+        <span class="blob blob--peach" aria-hidden="true"></span>
+        <figure class="hero-figure">
+          <img src="img/Comida 4.webp" alt="Bebidas frías preparadas por Crepcoffee Chavarría">
+        </figure>
+        <p class="hero-note"><span aria-hidden="true">♡</span> Favorito: mangonada cremosa</p>
+        <p class="hero-chip">Frío · Cremoso · Delicioso</p>
+      </div>
+    </section>
+
+    <section class="category-strip" aria-label="Categorías destacadas">
+      <ul>
+        <li>Crepas recién hechas</li>
+        <li>Bebidas bien frías</li>
+        <li>Antojitos para compartir</li>
+        <li>Fines de semana</li>
+      </ul>
+    </section>
+
+    <section id="bebidas" class="bebidas" aria-labelledby="titulo-bebidas">
+      <div class="bebidas-container">
+        <div class="bebidas-header">
+          <p class="bebidas-etiqueta">Bebidas</p>
+          <h2 id="titulo-bebidas" class="bebidas-titulo">
+            Frías, cremosas y con mucha alegría.
+          </h2>
+        </div>
+
+        <div class="bebidas-grid">
+          <article class="bebida-card">
+            <img src="img/Comida 9.webp" alt="Bebida fría de arándanos" class="bebida-imagen" loading="lazy">
+            <div class="bebida-info">
+              <h3>Arándanos</h3>
+              <p>Nuevo en el menú.</p>
+            </div>
+          </article>
+
+          <article class="bebida-card">
+            <img src="img/Comida 10.webp" alt="Bebida azul sabor a chicle" class="bebida-imagen" loading="lazy">
+            <div class="bebida-info">
+              <h3>Sabor a chicle</h3>
+              <p>Refrescante, dulce y diferente.</p>
+            </div>
+          </article>
+
+          <article class="bebida-card">
+            <img src="img/Comida 3.webp" alt="Bebida cremosa de fresa con topping" class="bebida-imagen" loading="lazy">
+            <div class="bebida-info">
+              <h3>Fresa cremosa</h3>
+              <p>Con topping crujiente.</p>
+            </div>
+          </article>
+
+          <article class="bebida-card">
+            <img src="img/Comida 12.webp" alt="Frappé rosa con hielo" class="bebida-imagen" loading="lazy">
+            <div class="bebida-info">
+              <h3>Frappé rosa</h3>
+              <p>El favorito para compartir.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="menu-section" aria-labelledby="menu-title">
+      <div class="menu-container">
+        <header class="menu-header">
+          <p class="menu-eyebrow">MENÚ</p>
+          <h2 id="menu-title">Elige tu antojo.</h2>
+        </header>
+
+        <div class="menu-grid">
+          <article class="menu-card">
+            <img src="img/Comida 2.webp" alt="Quesabirrias con consomé, salsa y limón" loading="lazy">
+            <div class="menu-card-info">
+              <h3>Quesabirrias</h3>
+              <p>Rellenas de birria y queso, con consomé, salsa y limón.</p>
+              <p class="menu-price" aria-label="Precio por agregar"><span aria-hidden="true">$</span></p>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <img src="img/Comida 5.webp" alt="Crepa de banano con chocolate" loading="lazy">
+            <div class="menu-card-info">
+              <h3>Crepa de banano con chocolate</h3>
+              <p>Crepa dulce con banano, chocolate y crema.</p>
+              <p class="menu-price" aria-label="Precio por agregar"><span aria-hidden="true">$</span></p>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <img src="img/Comida 6.webp" alt="Doraditas con queso en su charola" loading="lazy">
+            <div class="menu-card-info">
+              <h3>Doraditas con queso</h3>
+              <p>Crujientes por fuera, suaves por dentro.</p>
+              <p class="menu-price" aria-label="Precio por agregar"><span aria-hidden="true">$</span></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="visitanos" class="lugar-section" aria-labelledby="lugar-title">
+      <div class="lugar-container">
+        <span id="historia" class="section-anchor" aria-hidden="true"></span>
+        <header class="lugar-header">
+          <p class="lugar-eyebrow">NUESTRO LUGAR</p>
+          <h2 id="lugar-title">Ven, siéntate y quédate un rato.</h2>
+        </header>
+
+        <div class="lugar-gallery" aria-label="Fotos de nuestro local">
+          <img class="lugar-photo lugar-photo--one" src="img/Local 3.webp" alt="Interior del café con el corazón dorado y el oso decorativo" loading="lazy">
+          <img class="lugar-photo lugar-photo--two" src="img/Local 2.webp" alt="Mesas del patio junto a la entrada roja y las plantas" loading="lazy">
+          <img class="lugar-photo lugar-photo--three" src="img/Local 4.webp" alt="Mural y mesas del área exterior del café" loading="lazy">
+          <img class="lugar-photo lugar-photo--four" src="img/Local 1.webp" alt="Fachada de Crepcoffee Chavarría" loading="lazy">
+        </div>
+
+        <article class="lugar-story">
+          <img class="lugar-logo" src="img/logo.webp" alt="Logotipo de Crepcoffee Chavarría" loading="lazy">
+          <div class="lugar-story-copy">
+            <h3>Una idea casera que encontró su lugar.</h3>
+            <p>Nació de las ganas de compartir recetas sencillas y ratitos que se sienten cercanos. Hoy es el punto de encuentro del fin de semana.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: CÓMO PEDIR -->
+    <section id="como-pedir" class="pasos-section" aria-labelledby="pasos-title">
+      <div class="pasos-container">
+
+        <header class="pasos-header">
+          <p class="pasos-eyebrow">PEDIR ES FÁCIL</p>
+          <h2 id="pasos-title">Tres pasos y listo.</h2>
+        </header>
+
+        <div class="pasos-grid">
+
+          <article class="paso-card">
+            <span class="paso-numero" aria-hidden="true">1</span>
+            <h3>Elige</h3>
+            <p>Mira el menú y escoge tu antojo.</p>
+          </article>
+
+          <article class="paso-card">
+            <span class="paso-numero" aria-hidden="true">2</span>
+            <h3>Escríbenos</h3>
+            <p>Mándanos tu pedido por WhatsApp.</p>
+          </article>
+
+          <article class="paso-card">
+            <span class="paso-numero" aria-hidden="true">3</span>
+            <h3>Pasa por él</h3>
+            <p>Lo preparamos al momento.</p>
+          </article>
+
+        </div>
+
+        <div class="pasos-action">
+          <a
+            href="https://api.whatsapp.com/send?phone=50375278825&text=Hola%20Crepcoffee%2C%20quiero%20hacer%20un%20pedido."
+            class="pasos-btn-whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Pedir por WhatsApp"
+          >
+            <span aria-hidden="true">☎</span>
+            <span>Pedir por WhatsApp</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECCIÓN: HORARIO Y UBICACIÓN -->
+    <section id="horario" class="horario-section" aria-labelledby="horario-title">
+      <div class="horario-container">
+        <div class="horario-info">
+          <p class="horario-eyebrow">HORARIO Y UBICACIÓN</p>
+          <h2 id="horario-title">Tres tardes para saborear sin prisa.</h2>
+
+          <ul class="horario-tabla">
+            <li>
+              <span class="dia">Viernes</span>
+              <span class="horas">4:00 – 8:00 PM</span>
+            </li>
+            <li>
+              <span class="dia">Sábado</span>
+              <span class="horas">4:00 – 8:00 PM</span>
+            </li>
+            <li>
+              <span class="dia">Domingo</span>
+              <span class="horas">4:00 – 8:00 PM</span>
+            </li>
+          </ul>
+
+          <div class="horario-ubicacion">
+            <span aria-hidden="true">📍</span>
+            <span>Construferretería Chavarría, Cantón Olomega</span>
+          </div>
+        </div>
+
+        <div class="horario-visual">
+          <figure class="horario-card-img">
+            <img src="img/Horarios.webp" alt="Cartel de horarios de Crepcoffee Chavarría" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: PEDIDO POR WHATSAPP -->
+    <section id="contacto" class="pedido-section" aria-labelledby="pedido-title">
+      <div class="pedido-container">
+        <h2 id="pedido-title">¿Se te antojó?</h2>
+        <p>Escríbenos y te lo tenemos listo.</p>
+
+        <a
+          class="pedido-whatsapp"
+          href="https://api.whatsapp.com/send?phone=50375278825&text=Hola%20Crepcoffee%2C%20quiero%20hacer%20un%20pedido."
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Pedir por WhatsApp"
+        >
+          <span class="pedido-whatsapp-icon" aria-hidden="true">◉</span>
+          <span>Pedir por WhatsApp</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="site-footer" aria-label="Pie de página">
+    <div class="footer-container">
+      <section class="footer-brand" aria-labelledby="footer-brand-title">
+        <a class="footer-logo" href="#inicio" aria-label="Volver al inicio">
+          <img src="img/logo.webp" alt="Logo de Crepcoffee Chavarría">
+          <span>
+            <strong id="footer-brand-title">Crepcoffee</strong>
+            <small>CHAVARRÍA</small>
+          </span>
+        </a>
+
+        <p>Crepas, bebidas frías y antojitos preparados con cariño cada fin de semana.</p>
+
+        <a class="footer-whatsapp" href="https://api.whatsapp.com/send?phone=50375278825&text=Hola%20Crepcoffee%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+          <span aria-hidden="true">◔</span>
+        </a>
+      </section>
+
+      <nav class="footer-links" aria-label="Enlaces del pie de página">
+        <h2>Explora</h2>
+        <a href="#menu">Menú</a>
+        <a href="#bebidas">Bebidas</a>
+        <a href="#historia">Nuestra historia</a>
+        <a href="#horario">Horario</a>
+        <a href="#visitanos">Ubicación</a>
+      </nav>
+
+      <section class="footer-hours" aria-labelledby="footer-hours-title">
+        <p>Abierto</p>
+        <h2 id="footer-hours-title">Viernes, sábado y domingo</h2>
+        <span>4:00 PM–8:00 PM</span>
+      </section>
+    </div>
+
+    <p class="footer-copyright">© 2026 Crepcoffee Chavarría</p>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
