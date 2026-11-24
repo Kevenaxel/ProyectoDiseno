@@ -1318,3 +1318,103 @@ section > .section-intro {
     grid-column: auto;
   }
 }
+
+/* ==========================================
+   PASARELAS DE BEBIDAS Y MENÚ
+   ========================================== */
+
+.image-carousel {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-xs);
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex !important;
+  grid-template-columns: none !important;
+  gap: var(--space-md);
+  min-width: 0;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-behavior: smooth;
+  scroll-snap-type: inline mandatory;
+  scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-track > article {
+  flex: 0 0 calc((100% - (var(--space-md) * 3)) / 4);
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.menu-grid.carousel-track > article {
+  flex-basis: calc((100% - (var(--space-md) * 2)) / 3);
+}
+
+.carousel-control {
+  display: inline-grid;
+  width: 2.6rem;
+  height: 2.6rem;
+  place-items: center;
+  border: 2px solid var(--color-brown-900);
+  border-radius: 50%;
+  background: var(--color-yellow);
+  color: var(--color-brown-900);
+  cursor: pointer;
+  font-family: Georgia, serif;
+  font-size: 2rem;
+  line-height: 1;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.carousel-control:hover:not(:disabled) {
+  transform: scale(1.08);
+}
+
+.carousel-control:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.carousel-control:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
+
+.menu-section .carousel-control {
+  background: var(--color-yellow-soft);
+}
+
+@media (max-width: 767px) {
+  .image-carousel {
+    gap: var(--space-2xs);
+  }
+
+  .carousel-track {
+    gap: var(--space-sm);
+  }
+
+  .carousel-track > article,
+  .menu-grid.carousel-track > article {
+    flex-basis: min(82vw, 280px);
+  }
+
+  .carousel-control {
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 1.7rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  .carousel-track > article,
+  .menu-grid.carousel-track > article {
+    flex-basis: calc((100% - var(--space-md)) / 2);
+  }
+}

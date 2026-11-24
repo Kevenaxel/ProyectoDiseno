@@ -100,7 +100,10 @@
           </h2>
         </div>
 
-        <div class="bebidas-grid">
+        <div class="image-carousel" data-carousel>
+          <button class="carousel-control carousel-control--prev" type="button" data-carousel-prev aria-label="Ver bebida anterior">‹</button>
+
+          <div class="bebidas-grid carousel-track" id="bebidasCarrusel" tabindex="0">
           <article class="bebida-card">
             <img src="img/Comida 9.webp" alt="Bebida fría de arándanos" class="bebida-imagen" loading="lazy">
             <div class="bebida-info">
@@ -132,6 +135,9 @@
               <p>El favorito para compartir.</p>
             </div>
           </article>
+          </div>
+
+          <button class="carousel-control carousel-control--next" type="button" data-carousel-next aria-label="Ver bebida siguiente">›</button>
         </div>
       </div>
     </section>
@@ -143,7 +149,10 @@
           <h2 id="menu-title">Elige tu antojo.</h2>
         </header>
 
-        <div class="menu-grid">
+        <div class="image-carousel" data-carousel>
+          <button class="carousel-control carousel-control--prev" type="button" data-carousel-prev aria-label="Ver platillo anterior">‹</button>
+
+          <div class="menu-grid carousel-track" id="menuCarrusel" tabindex="0">
           <article class="menu-card">
             <img src="img/Comida 2.webp" alt="Quesabirrias con consomé, salsa y limón" loading="lazy">
             <div class="menu-card-info">
@@ -170,6 +179,9 @@
               <p class="menu-price" aria-label="Precio por agregar"><span aria-hidden="true">$</span></p>
             </div>
           </article>
+          </div>
+
+          <button class="carousel-control carousel-control--next" type="button" data-carousel-next aria-label="Ver platillo siguiente">›</button>
         </div>
       </div>
     </section>
