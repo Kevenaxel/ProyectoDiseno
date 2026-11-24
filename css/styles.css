@@ -1015,6 +1015,12 @@ section > .section-intro {
   transform: translateY(-3px);
 }
 
+.footer-whatsapp-icon {
+  display: block;
+  width: 1.45rem;
+  height: 1.45rem;
+}
+
 .footer-links,
 .footer-hours {
   display: flex;
