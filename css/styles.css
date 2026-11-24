@@ -1447,3 +1447,241 @@ section > .section-intro {
     flex-basis: calc((100% - var(--space-md)) / 2);
   }
 }
+
+/* ==========================================
+   DETALLES FINALES DE EXPERIENCIA
+   ========================================== */
+
+::selection {
+  background: var(--color-yellow);
+  color: var(--color-brown-900);
+}
+
+:where(a, button, [tabindex]):focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+.hero-text,
+.bebida-info p,
+.menu-card-info p,
+.lugar-story-copy p,
+.paso-card p {
+  text-wrap: pretty;
+}
+
+.hero-figure img,
+.bebida-imagen,
+.menu-card > img,
+.lugar-photo,
+.horario-card-img img {
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+.hero-figure:hover img,
+.bebida-card:hover .bebida-imagen,
+.menu-card:hover > img,
+.lugar-photo:hover,
+.horario-card-img:hover img {
+  transform: scale(1.035);
+  filter: saturate(1.06);
+}
+
+.bebida-card,
+.menu-card,
+.paso-card,
+.lugar-story,
+.horario-card-img {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.bebida-card:hover,
+.menu-card:hover,
+.lugar-story:hover,
+.horario-card-img:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card);
+}
+
+.bebida-card:focus-within,
+.menu-card:focus-within {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+.bebida-card,
+.menu-card {
+  overflow: hidden;
+}
+
+.bebida-imagen,
+.menu-card > img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.menu-card-info,
+.bebida-info {
+  min-height: 8.5rem;
+}
+
+.carousel-track {
+  scroll-padding-inline: var(--space-2xs);
+}
+
+@media (max-width: 600px) {
+  section {
+    padding-block: clamp(3rem, 12vw, 4.5rem);
+  }
+
+  .hero-actions {
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    flex: 1 1 0;
+    min-width: 0;
+    padding-inline: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* ==========================================
+   MEJORAS DEL PIE DE PÁGINA
+   ========================================== */
+
+.site-footer {
+  border-top: 3px solid rgba(58, 36, 22, 0.12);
+}
+
+.footer-container {
+  align-items: stretch;
+  padding-block: 0.5rem 1.5rem;
+}
+
+.footer-brand,
+.footer-links,
+.footer-hours {
+  min-height: 190px;
+}
+
+.footer-brand {
+  justify-content: flex-start;
+}
+
+.footer-logo {
+  border-radius: var(--radius-md);
+  transition: transform 0.2s ease;
+}
+
+.footer-logo:hover {
+  transform: translateY(-2px);
+}
+
+.footer-whatsapp {
+  box-shadow: 0 5px 0 rgba(58, 36, 22, 0.18);
+}
+
+.footer-whatsapp:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 rgba(58, 36, 22, 0.18);
+}
+
+.footer-links,
+.footer-hours {
+  padding-inline: 1.25rem;
+  border-left: 1px solid rgba(58, 36, 22, 0.16);
+}
+
+.footer-links h2,
+.footer-hours > p {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.4rem;
+  letter-spacing: 0.08em;
+}
+
+.footer-links a {
+  position: relative;
+  width: fit-content;
+  margin-bottom: 0.35rem;
+  padding: 0.12rem 0;
+}
+
+.footer-links a::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  border-radius: var(--radius-full);
+  background: var(--color-terracota);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.footer-links a:hover::after,
+.footer-links a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.footer-hours h2 {
+  margin-bottom: 1.2rem;
+}
+
+.footer-hours span {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.8rem;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.36);
+  font-weight: 600;
+}
+
+.footer-copyright {
+  width: min(100%, 1200px);
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(58, 36, 22, 0.16);
+}
+
+@media (max-width: 700px) {
+  .footer-links,
+  .footer-hours {
+    min-height: auto;
+    padding-inline: 0;
+    border-left: 0;
+  }
+
+  .footer-links {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(58, 36, 22, 0.16);
+  }
+
+  .footer-hours {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(58, 36, 22, 0.16);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-logo,
+  .footer-links a::after,
+  .footer-whatsapp {
+    transition: none;
+  }
+}
