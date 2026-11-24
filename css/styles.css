@@ -1447,3 +1447,114 @@ section > .section-intro {
     flex-basis: calc((100% - var(--space-md)) / 2);
   }
 }
+
+/* ==========================================
+   DETALLES FINALES DE EXPERIENCIA
+   ========================================== */
+
+::selection {
+  background: var(--color-yellow);
+  color: var(--color-brown-900);
+}
+
+:where(a, button, [tabindex]):focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+.hero-text,
+.bebida-info p,
+.menu-card-info p,
+.lugar-story-copy p,
+.paso-card p {
+  text-wrap: pretty;
+}
+
+.hero-figure img,
+.bebida-imagen,
+.menu-card > img,
+.lugar-photo,
+.horario-card-img img {
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+.hero-figure:hover img,
+.bebida-card:hover .bebida-imagen,
+.menu-card:hover > img,
+.lugar-photo:hover,
+.horario-card-img:hover img {
+  transform: scale(1.035);
+  filter: saturate(1.06);
+}
+
+.bebida-card,
+.menu-card,
+.paso-card,
+.lugar-story,
+.horario-card-img {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.bebida-card:hover,
+.menu-card:hover,
+.lugar-story:hover,
+.horario-card-img:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card);
+}
+
+.bebida-card:focus-within,
+.menu-card:focus-within {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+.bebida-card,
+.menu-card {
+  overflow: hidden;
+}
+
+.bebida-imagen,
+.menu-card > img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.menu-card-info,
+.bebida-info {
+  min-height: 8.5rem;
+}
+
+.carousel-track {
+  scroll-padding-inline: var(--space-2xs);
+}
+
+@media (max-width: 600px) {
+  section {
+    padding-block: clamp(3rem, 12vw, 4.5rem);
+  }
+
+  .hero-actions {
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    flex: 1 1 0;
+    min-width: 0;
+    padding-inline: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
