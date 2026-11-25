@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   const navToggle = document.getElementById("navToggle");
   const navbarMenu = document.getElementById("navbarMenu");
@@ -6,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (navToggle && navbarMenu) {
     const closeMenu = () => {
+      if (!navbarMenu.classList.contains("is-open")) return;
       navbarMenu.classList.remove("is-open");
       navToggle.setAttribute("aria-expanded", "false");
       document.body.style.overflow = "";
@@ -30,32 +30,36 @@ document.addEventListener("DOMContentLoaded", () => {
       if (event.key === "Escape") closeMenu();
     });
 
-    window.addEventListener("resize", () => {
-      if (window.innerWidth >= 768) closeMenu();
+    window.matchMedia("(min-width: 768px)").addEventListener("change", (event) => {
+      if (event.matches) closeMenu();
     });
   }
+
   if (navbar) {
+    let lastScrolled = null;
     const onScroll = () => {
-      navbar.classList.toggle("is-scrolled", window.scrollY > 8);
+      const isScrolled = window.scrollY > 8;
+      if (isScrolled !== lastScrolled) {
+        lastScrolled = isScrolled;
+        navbar.classList.toggle("is-scrolled", isScrolled);
+      }
     };
-    document.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
   }
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   document.querySelectorAll("[data-carousel]").forEach((carousel) => {
     const track = carousel.querySelector(".carousel-track");
     const previous = carousel.querySelector("[data-carousel-prev]");
     const next = carousel.querySelector("[data-carousel-next]");
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    let autoplayId = null;
 
     if (!track || !previous || !next) return;
 
-    const getScrollAmount = () => {
-      const card = track.querySelector("article");
-      const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
-      return card ? card.getBoundingClientRect().width + gap : track.clientWidth;
-    };
+    let autoplayId = null;
+    let scrollStep = 0;
+    let isVisible = false;
 
     const updateControls = () => {
       const maxScroll = track.scrollWidth - track.clientWidth - 2;
@@ -63,13 +67,22 @@ document.addEventListener("DOMContentLoaded", () => {
       next.disabled = track.scrollLeft >= maxScroll;
     };
 
+    const measure = () => {
+      const card = track.querySelector("article");
+      const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+      scrollStep = card ? card.offsetWidth + gap : track.clientWidth;
+      updateControls();
+    };
+
     const stopAutoplay = () => {
-      window.clearInterval(autoplayId);
-      autoplayId = null;
+      if (autoplayId) {
+        window.clearInterval(autoplayId);
+        autoplayId = null;
+      }
     };
 
     const startAutoplay = () => {
-      if (reduceMotion.matches || autoplayId) return;
+      if (reduceMotion.matches || autoplayId || !isVisible || document.hidden) return;
 
       autoplayId = window.setInterval(() => {
         const maxScroll = track.scrollWidth - track.clientWidth - 2;
@@ -77,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (track.scrollLeft >= maxScroll) {
           track.scrollTo({ left: 0, behavior: "smooth" });
         } else {
-          next.click();
+          track.scrollBy({ left: scrollStep, behavior: "smooth" });
         }
       }, 5000);
     };
@@ -88,22 +101,36 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     previous.addEventListener("click", () => {
-      track.scrollBy({ left: -getScrollAmount(), behavior: "smooth" });
+      track.scrollBy({ left: -scrollStep, behavior: "smooth" });
       restartAutoplay();
     });
 
     next.addEventListener("click", () => {
-      track.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
+      track.scrollBy({ left: scrollStep, behavior: "smooth" });
       restartAutoplay();
     });
 
     track.addEventListener("scroll", updateControls, { passive: true });
+
     track.addEventListener("keydown", (event) => {
       if (event.key === "ArrowLeft") previous.click();
       if (event.key === "ArrowRight") next.click();
     });
 
-    window.addEventListener("resize", updateControls);
+    new ResizeObserver(measure).observe(track);
+
+    new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+        isVisible ? startAutoplay() : stopAutoplay();
+      },
+      { threshold: 0.2 }
+    ).observe(carousel);
+
+    document.addEventListener("visibilitychange", () => {
+      document.hidden ? stopAutoplay() : startAutoplay();
+    });
+
     carousel.addEventListener("mouseenter", stopAutoplay);
     carousel.addEventListener("mouseleave", startAutoplay);
     carousel.addEventListener("focusin", stopAutoplay);
@@ -111,7 +138,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!carousel.contains(event.relatedTarget)) startAutoplay();
     });
 
-    updateControls();
-    startAutoplay();
+    measure();
   });
 });
