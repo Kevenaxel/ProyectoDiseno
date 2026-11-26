@@ -66,6 +66,7 @@ Abre `index.html` en el navegador, o usa la extensión **Live Server** de VS Cod
 - Nelson René Rodriguez Quintanilla
 - Kevin Mauricio Alvarenga Flores
 - Ronaldo Dario Turcios Alvarez
+- David Alexander Urias Blanco
 
 ---
 
