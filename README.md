@@ -56,17 +56,10 @@ cd ProyectoDiseno
 
 Abre `index.html` en el navegador, o usa la extensión **Live Server** de VS Code.
 
-## Pendientes
-
-- Mapa y botón «Cómo llegar».
-- Indicar el pago en efectivo.
-- Enlaces de llamada e Instagram.
-- Mejorar SEO (meta description, Open Graph) y contraste del botón de WhatsApp.
-
-## Equipo
 
 **Docente:** Ing. Alberto Turcios Ortez
 
+## Equipo
 - David Esau Alvarez Ventura
 - Josue Enrique Moreno Blanco
 - Iván Ezequiel Quintanilla Quintanilla
